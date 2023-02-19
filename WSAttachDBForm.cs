@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,8 @@ namespace WolfSQL
                 {
                     DbFileName.Text = theDialog.FileName;
                     DbAttachButton.Enabled = true;
+                    DbDBName.Text = Path.GetFileNameWithoutExtension(theDialog.FileName);
+                    DbDBName.Focus();
                     return;
                 }
                 catch (Exception ex)
@@ -52,12 +55,20 @@ namespace WolfSQL
             string DB_File = DbFileName.Text;
             if (this.conn != null && DB_Name.Length > 0)
             {
-                SQLiteCommand cmd = this.conn.CreateCommand();
-                cmd.CommandText = "ATTACH DATABASE '" + DB_File + "' AS " + DB_Name + ";";
-                int ch = cmd.ExecuteNonQuery();
-                string line = "Attached database " + DB_Name;
-                MessageBox.Show(line, "Attached ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                try
+                {
+                    SQLiteCommand cmd = this.conn.CreateCommand();
+                    cmd.CommandText = "ATTACH DATABASE '" + DB_File + "' AS " + DB_Name + ";";
+                    int ch = cmd.ExecuteNonQuery();
+                    string line = "Attached database " + DB_Name;
+                    MessageBox.Show(line, "Attached ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                } 
+                catch
+                {
+                    MessageBox.Show("Failed to attach database :"+DB_Name, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
             }
         }
 

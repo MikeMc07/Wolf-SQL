@@ -40,18 +40,20 @@ namespace WolfSQL
             // 
             // DbFileName
             // 
+            this.DbFileName.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.DbFileName.Location = new System.Drawing.Point(12, 25);
             this.DbFileName.Name = "DbFileName";
             this.DbFileName.ReadOnly = true;
             this.DbFileName.Size = new System.Drawing.Size(228, 20);
             this.DbFileName.TabIndex = 0;
+            this.DbFileName.TabStop = false;
             // 
             // DbDBName
             // 
             this.DbDBName.Location = new System.Drawing.Point(12, 76);
             this.DbDBName.Name = "DbDBName";
             this.DbDBName.Size = new System.Drawing.Size(147, 20);
-            this.DbDBName.TabIndex = 1;
+            this.DbDBName.TabIndex = 0;
             this.DbDBName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DbDBName_KeyPress);
             // 
             // button1
