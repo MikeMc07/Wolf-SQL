@@ -40,7 +40,7 @@ namespace WolfSQL
             this.SQLWindowButton.Name = "SQLWindowButton";
             this.SQLWindowButton.Size = new System.Drawing.Size(118, 23);
             this.SQLWindowButton.TabIndex = 0;
-            this.SQLWindowButton.Text = "SqlWindow";
+            this.SQLWindowButton.Text = "DBManager";
             this.SQLWindowButton.UseVisualStyleBackColor = true;
             this.SQLWindowButton.Click += new System.EventHandler(this.button1_Click);
             // 

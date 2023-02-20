@@ -19,7 +19,7 @@ namespace WolfSQL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLWindow win = new SQLWindow(false);
+            DBWindow win = new DBWindow();
             win.Show();
         }
 

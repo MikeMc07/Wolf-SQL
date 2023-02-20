@@ -88,6 +88,7 @@ namespace WolfSQL
             this.DbPragmaList = new System.Windows.Forms.ToolStripComboBox();
             this.RunPragmaBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.selectNoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -243,7 +244,8 @@ namespace WolfSQL
             this.copyToolStripMenuItem,
             this.pasteToolStripMenuItem,
             this.toolStripSeparator4,
-            this.selectAllToolStripMenuItem});
+            this.selectAllToolStripMenuItem,
+            this.selectNoneToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
@@ -318,13 +320,13 @@ namespace WolfSQL
             // customizeToolStripMenuItem
             // 
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.customizeToolStripMenuItem.Text = "&Customize";
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // statusStrip1
@@ -491,7 +493,7 @@ namespace WolfSQL
             this.toolStripSeparator10});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(460, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(491, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // newToolStripButton
@@ -630,6 +632,7 @@ namespace WolfSQL
             "pragma_list"});
             this.DbPragmaList.Name = "DbPragmaList";
             this.DbPragmaList.Size = new System.Drawing.Size(121, 25);
+            this.DbPragmaList.SelectedIndexChanged += new System.EventHandler(this.RunPragmaBtn_Click);
             // 
             // RunPragmaBtn
             // 
@@ -645,6 +648,13 @@ namespace WolfSQL
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
             this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
+            // 
+            // selectNoneToolStripMenuItem
+            // 
+            this.selectNoneToolStripMenuItem.Name = "selectNoneToolStripMenuItem";
+            this.selectNoneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.selectNoneToolStripMenuItem.Text = "Select None";
+            this.selectNoneToolStripMenuItem.Click += new System.EventHandler(this.editSelectNone_Click);
             // 
             // WSQLWindow
             // 
@@ -739,5 +749,6 @@ namespace WolfSQL
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripMenuItem selectNoneToolStripMenuItem;
     }
 }

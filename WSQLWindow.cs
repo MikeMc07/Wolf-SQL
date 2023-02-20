@@ -48,7 +48,7 @@ namespace WolfSQL
         {
             SaveFileDialog theDialog = new SaveFileDialog();
             theDialog.Title = "Create Database";
-            theDialog.Filter = "SQLite DB Files|*.db";
+            theDialog.Filter = "SQLite DB Files|*.db|All files|*";
             if (theDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -75,7 +75,7 @@ namespace WolfSQL
         {
             OpenFileDialog theDialog = new OpenFileDialog();
             theDialog.Title = "Open Sqlite Database";
-            theDialog.Filter = "DB files|*.db";
+            theDialog.Filter = "DB files|*.db|All files|*";
             if (theDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -241,7 +241,7 @@ namespace WolfSQL
         {
             OpenFileDialog theDialog = new OpenFileDialog();
             theDialog.Title = "Open SQL File";
-            theDialog.Filter = "SQL files|*.sql";
+            theDialog.Filter = "SQL files|*.sql|All files|*";
             if (theDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -276,7 +276,7 @@ namespace WolfSQL
         {
             SaveFileDialog theDialog = new SaveFileDialog();
             theDialog.Title = "Save SQL File";
-            theDialog.Filter = "SQL Files|*.sql";
+            theDialog.Filter = "SQL Files|*.sql|All files|*";
             if (theDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -310,7 +310,7 @@ namespace WolfSQL
 
             SaveFileDialog theDialog = new SaveFileDialog();
             theDialog.Title = "Save JSON File";
-            theDialog.Filter = "JSON Files|*.json";
+            theDialog.Filter = "JSON Files|*.json|All files|*";
             if (theDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -336,7 +336,7 @@ namespace WolfSQL
 
             SaveFileDialog theDialog = new SaveFileDialog();
             theDialog.Title = "Save CSV File";
-            theDialog.Filter = "CSV Files|*.csv";
+            theDialog.Filter = "CSV Files|*.csv|All files|*";
             if (theDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -429,6 +429,12 @@ namespace WolfSQL
         private void editSelectAll_Click(object sender, EventArgs e)
         {
             this.simpleEditor1.SelectAll();
+        }
+        
+        private void editSelectNone_Click(object sender, EventArgs e)
+        {
+            int a = this.simpleEditor1.CurrentPosition;
+            this.simpleEditor1.SetSelection(a,a);
         }
 
         private void runSql_Click(object sender, EventArgs e)
