@@ -28,7 +28,7 @@ namespace WolfSQL
         {
             OpenFileDialog theDialog = new OpenFileDialog();
             theDialog.Title = "Open Sqlite Database";
-            theDialog.Filter = "DB files|*.db|All files|*";
+            theDialog.Filter = "SQLite DB files|*.db;*.sqlite|All files|*";
             if (theDialog.ShowDialog() == DialogResult.OK)
             {
                 try
